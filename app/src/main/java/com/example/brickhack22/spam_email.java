@@ -44,12 +44,13 @@ public class spam_email extends AppCompatActivity {
                 Log.d(TAG, "onClick: clicked desperate");
 
 
-                Intent email = new Intent(Intent.ACTION_SEND);
+                Intent email = new Intent(Intent.ACTION_SENDTO);
 
                 email.putExtra(Intent.EXTRA_EMAIL, new String[]{addy.getText().toString()});
                 email.putExtra(Intent.EXTRA_SUBJECT, "My phone bill is almost due!!");
                 email.putExtra(Intent.EXTRA_TEXT, "Hi " + recip.getText().toString() + ", \n My phone bill is due tomorrow and I don't get paid for another three days. Can you give me $55 using the link below?? I'd really appreciate it!");
                 startActivity(email.createChooser(email, "Choose an email app"));
+                email.setType("message/rfc822");
             }
         });
     }
