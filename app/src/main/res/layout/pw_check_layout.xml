@@ -24,7 +24,7 @@
         android:layout_marginEnd="17dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Please enter a password"
+        android:text="   "
         app:layout_constraintEnd_toStartOf="@+id/submit"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -34,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="63dp"
-        android:text="TextView"
+        android:text="Please enter a password:"
         app:layout_constraintBottom_toTopOf="@+id/passwordbox"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
