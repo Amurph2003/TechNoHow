@@ -73,10 +73,35 @@
 
         <TextView
             android:id="@+id/spam_desc"
+            android:layout_width="344dp"
+            android:layout_height="109dp"
+            android:layout_marginTop="88dp"
+            android:text="@string/explain1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.492"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/emailaddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="132dp"
-            android:text="TextView"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="36dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="@email.com"
+            app:layout_constraintBottom_toTopOf="@+id/recipient"
+            app:layout_constraintEnd_toEndOf="@+id/recipient" />
+
+        <EditText
+            android:id="@+id/recipient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="320dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Recipient"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

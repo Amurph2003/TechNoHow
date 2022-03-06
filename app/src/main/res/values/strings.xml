@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">BrickHack22</string>
     <string name="score"></string>
-
+ <string name="explain1">Once you provide an email address and a recipient name, you will then select the type of email you want to send. A prompt will open asking which email app to send it in. The recipient will recieve the email from you, and contains no malicious links nor will it collect any data.</string>
 </resources>
