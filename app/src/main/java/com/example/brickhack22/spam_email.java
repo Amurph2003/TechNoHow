@@ -29,5 +29,14 @@ public class spam_email extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button desp = (Button) findViewById(R.id.desperate);
+        Button inj = (Button) findViewById(R.id.injury);
+        Button win = (Button) findViewById(R.id.prizes);
+        Button friend = (Button) findViewById(R.id.friend);
+
+
+
+
     }
 }
