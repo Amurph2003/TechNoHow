@@ -1,12 +1,12 @@
 package com.example.brickhack22;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -46,16 +46,15 @@ public class spam_email extends AppCompatActivity {
 
                 Intent email = new Intent(Intent.ACTION_SENDTO);
 
-                email.setType("message/rfc822");
+                email.setData(Uri.parse("mailto:"));
 
                 email.putExtra(Intent.EXTRA_EMAIL, new String[]{addy.getText().toString()});
                 email.putExtra(Intent.EXTRA_SUBJECT, "My phone bill is almost due!!");
                 email.putExtra(Intent.EXTRA_TEXT, "Hi " + recip.getText().toString() + ", \n My phone bill is due tomorrow and I don't get paid for another three days. Can you give me $55 using the link below?? I'd really appreciate it!");
-                try{
+                if (email.resolveActivity(getPackageManager()) != null) {
                     startActivity(email);
-                    finish();
-                } catch(android.content.ActivityNotFoundException ex){
-                    Toast.makeText(spam_email.this, "No emails installed...", Toast.LENGTH_SHORT).show();
+                } else {
+                    Log.d(TAG, "onClick: no email?");
                 }
             }
         });
