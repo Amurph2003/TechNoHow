@@ -35,8 +35,15 @@ public class spam_email extends AppCompatActivity {
         Button win = (Button) findViewById(R.id.prizes);
         Button friend = (Button) findViewById(R.id.friend);
 
+        desp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d(TAG, "onClick: clicked desperate");
 
 
-
+//                Intent intent = new Intent(spam_email.this, MainActivity.class);
+//                startActivity(intent);
+            }
+        });
     }
 }

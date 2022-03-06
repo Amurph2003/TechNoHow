@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">BrickHack22</string>
+    <string name="score"></string>
+
 </resources>
