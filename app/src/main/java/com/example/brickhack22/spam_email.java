@@ -44,7 +44,7 @@ public class spam_email extends AppCompatActivity {
                 Log.d(TAG, "onClick: clicked desperate");
 
 
-                Intent email = new Intent(spam_email.this, MainActivity.class);
+                Intent email = new Intent(Intent.ACTION_SEND);
 
                 email.putExtra(Intent.EXTRA_EMAIL, new String[]{addy.getText().toString()});
                 email.putExtra(Intent.EXTRA_SUBJECT, "My phone bill is almost due!!");
