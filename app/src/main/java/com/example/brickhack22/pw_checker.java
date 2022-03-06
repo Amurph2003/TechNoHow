@@ -17,12 +17,14 @@ import me.gosimple.nbvcxz.scoring.Result;
 public class pw_checker extends AppCompatActivity {
     private static final String TAG = "pw_checker";
     // With all defaults...
-    Nbvcxz nbvcxz = new Nbvcxz();
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pw_check_layout);
+
+        Nbvcxz nbvcxz = new Nbvcxz();
 
         Button home_from_pw = (Button) findViewById(R.id.home_pw);
 
@@ -44,7 +46,32 @@ public class pw_checker extends AppCompatActivity {
                 Log.d(TAG, "onClick: clicked submit for pw");
                 String phrase = password.getText().toString();
                 Result score = nbvcxz.estimate(phrase);
-                scored.setText(score.getBasicScore());
+                int intscore = score.getBasicScore()+1;
+                String resulted;
+                if(intscore == 1){
+                    resulted = " - This is not a strong password.";
+                    for(String sug: score.getFeedback().getSuggestion()){
+                        resulted += " ";
+                        resulted += sug;
+                    }
+                } else if (intscore == 2) {
+                    resulted = " - This is not a very strong password. ";
+                    for(String sug: score.getFeedback().getSuggestion()){
+                        resulted += " ";
+                        resulted += sug;
+                    }
+                } else if (intscore == 3) {
+                    resulted = " - This is is an ok password, but could be improved. ";
+                    for(String sug: score.getFeedback().getSuggestion()){
+                        resulted += " ";
+                        resulted += sug;
+                    }
+                } else if (intscore == 4) {
+                    resulted = " - This is a pretty decent password. ";
+                } else {
+                    resulted = " - This is a strong password. ";
+                }
+                scored.setText(Integer.toString(intscore) + " " + resulted);
             }
         });
 
