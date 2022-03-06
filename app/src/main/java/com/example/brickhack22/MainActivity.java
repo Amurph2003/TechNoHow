@@ -24,8 +24,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.d(TAG, "onClick: clicked spam button");
-                Intent intent = new Intent(MainActivity.this, spam_email.class);
-                startActivity(intent);
+                Intent intent1 = new Intent(MainActivity.this, spam_email.class);
+                startActivity(intent1);
             }
         });
 
@@ -35,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Log.d(TAG, "onClick: clicked password button");
-                Intent intent = new Intent(MainActivity.this, spam_email.class);
-                startActivity(intent);
+                Intent intent2 = new Intent(MainActivity.this, pw_checker.class);
+                startActivity(intent2);
             }
         });
     }

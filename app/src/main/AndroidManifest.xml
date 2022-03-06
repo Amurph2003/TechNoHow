@@ -18,6 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".spam_email"></activity>
+        <activity android:name=".pw_checker"></activity>
     </application>
 
 </manifest>
